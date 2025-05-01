@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ApiCadastro.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiCadastro.Data
 {
@@ -8,7 +9,9 @@ namespace ApiCadastro.Data
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            
+           
         }
+
+        public DbSet<UsuarioModel> Usuarios { get; set; }
     }
 }
