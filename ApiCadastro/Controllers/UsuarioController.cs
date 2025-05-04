@@ -1,0 +1,27 @@
+﻿using ApiCadastro.Models;
+using ApiCadastro.Services.Usuario;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace ApiCadastro.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UsuarioController : ControllerBase
+    {
+        private readonly IUsuarioInterface _usuarioInterface;
+        public UsuarioController(IUsuarioInterface usuarioInterface)
+        { 
+            _usuarioInterface = usuarioInterface;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ListarUsuarios()
+        {
+            // cria uma variavel usuarios e aguardar a _usuarioInterface realizar o metodo ListarUsuarios
+            var usuarios = await _usuarioInterface.ListarUsuarios();
+            return Ok(usuarios);
+
+        }
+    }
+}
