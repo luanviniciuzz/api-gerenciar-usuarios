@@ -9,7 +9,7 @@
         public string Email { get; set; }
         public string Token { get; set; }
         public DateTime DataCriacao { get; set; }
-        public DateTime DataAlteracao { get;}
+        public DateTime DataAlteracao { get; set; }
         public byte[] SenhaHash { get; set; }
         public byte[] SenhaSalt { get; set; }
     }
