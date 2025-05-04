@@ -23,5 +23,14 @@ namespace ApiCadastro.Controllers
             return Ok(usuarios);
 
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> BuscarUsuarioPorId(int id)
+        {
+
+            var usuario = await _usuarioInterface.BuscarUsuarioPorId(id);
+            return Ok(usuario);
+
+        }
     }
 }

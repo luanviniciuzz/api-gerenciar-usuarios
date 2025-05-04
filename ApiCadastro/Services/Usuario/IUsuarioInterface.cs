@@ -6,6 +6,7 @@ namespace ApiCadastro.Services.Usuario
     {
         //retorno nome parametros
         Task<ResponseModel<List<UsuarioModel>>> ListarUsuarios();
+        Task<ResponseModel<UsuarioModel>> BuscarUsuarioPorId(int id);
 
     }
 }
